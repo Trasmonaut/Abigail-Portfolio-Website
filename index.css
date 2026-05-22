@@ -1,0 +1,361 @@
+/* Center the last 4 images row */
+.center-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+}
+
+@media (max-width: 1100px) {
+    .center-row {
+        gap: 0.5rem;
+    }
+}
+.center-row > .col {
+    float: none;
+}
+:root{
+
+    --primary-off-white: #f0f0f0;
+    --secondary-off-white: #e0e0e0;
+
+    --primary-blue: #3c74a9;
+    --secondary-blue: #42a5f5;
+
+    --primary-green: #4caf50;
+    --secondary-green: #81c784;
+
+    --primary-red: #f44336;
+    --secondary-red: #e57373;
+
+    --primary-yellow: #ffeb3b;
+    --secondary-yellow: #fff176;
+
+    --primary-black: #212121;
+    --secondary-black: #424242;
+
+    --primary-orange: #ff9800;
+    --secondary-orange: #ffb74d;
+
+
+    --primary-pink: #f36e9b;
+    --secondary-pink: #da5b85;  
+
+    --pink-background: #f2bfd4;
+
+    --white: #ffffff;
+    --black: #000000;
+
+
+
+}
+
+/*MODIFY BELOW ONLY*/
+
+
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Double protection against overflowing rotated elements */
+    cursor: none !important; /* Hides the default mouse cursor */
+    scroll-snap-type: none;
+    scrollbar-width: thin;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-pink);
+  transform: rotate(-45deg);
+  pointer-events: none;
+  animation: fadeOut 1s ease-in-out forwards;
+  z-index: 10000;
+}
+
+/* Creates the heart shape using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-pink);
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 10px;
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.hero-section {
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image-container {
+    width: 100vw;
+    height: 40vh;
+    transform: translate(0%, 70%);
+}
+
+.hero-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .hero-title-container {
+        width: 100vw;
+        padding-top: 20px;
+        left: 0;
+    }
+}
+
+.title{
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+
+@media (max-width: 1100px) {
+    .title {
+        font-size: 3rem;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+        margin-left: 20px;
+    }
+}
+.highlight {
+    color: var(--primary-pink);
+}
+
+.subtitle {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3em;
+    color: var(--primary-black);
+    text-align: center;
+   
+
+}
+
+.subtitle:nth-child(2) {
+    margin-bottom: 40px;
+}
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    transform: translate(0%, 300px);
+}
+
+.quote-container {
+    margin-left: 75px;
+
+}
+
+.quote-text {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.25em;
+    font-style: italic;
+    color: var(--primary-black);
+    text-align: center;
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.shift-right {
+    transform: translateX(500%) !important;
+}
+
+@media (max-width: 768px) {
+    .shift-right {
+        transform: translateX(0%) !important;
+    }
+}
+
+.shift-left {
+    transform: translateX(-50%) !important;
+}
+
+@media (max-width: 768px) {
+    .shift-left {
+        transform: translateX(-2%) !important;
+}
+}
+
+.rotate-15 {
+    transform: rotate(-15deg);
+}
+
+.rotate-15-reverse {
+    transform: rotate(15deg);
+}
+
+.rotate-30 {
+    transform: rotate(-30deg);
+} 
+
+.rotate-30-reverse {
+    transform: rotate(30deg);
+}
+
+.rotate-45 {
+    transform: rotate(-45deg);
+}
+
+.rotate-45-reverse {
+    transform: rotate(45deg);
+}
+
+.polaroid-card {
+    width: 300px;
+    height: auto;
+    background-color: var(--primary-off-white);
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.polaroid-card-showcase {
+    width: 600px;
+    height: auto;
+    background-color: var(--primary-off-white);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .polaroid-card-showcase {
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.card-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--primary-black);
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.about-me-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: var(--white);
+}
+
+.about-me-title {
+    font-family: 'Climate Crisis', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-black);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-me-text {
+    font-family: 'Jura', sans-serif;
+    font-size: 1.25em;
+    font-weight: 800;
+    color: var(--primary-black);
+    text-align: center;
+    max-width: 1000px;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 1em;
+    font-style: italic;
+    color: var(--primary-pink);
+}
+
+.tape{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: var(--primary-blue);
+    transform: rotate(-15deg);
+    pointer-events: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+
+
+.pink {
+    background-color: var(--primary-pink);
+}
+
+.favourite-things-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px 20px;
+    margin-top: 50px;
+    background-color: var(--pink-background);
+}
