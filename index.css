@@ -299,12 +299,38 @@ body {
     margin-bottom: 20px;
 }
 
-.about-me-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: var(--white);
+.about-me-section{
+    position:relative;
+
+    background:#fffdf8;
+
+    padding:4rem;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.08);
+
+    border-radius:4px;
+
+    transform:rotate(-1deg);
+}
+
+.about-me-section::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:28px;
+
+    background:
+        rgba(255,230,170,0.5);
+
+    top:-14px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-3deg);
 }
 
 .about-me-title {
@@ -314,6 +340,28 @@ body {
     color: var(--primary-black);
     margin-bottom: 20px;
     text-transform: uppercase;
+}
+
+.polaroid-card,
+.polaroid-card-showcase,
+.memory-card{
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.polaroid-card:hover,
+.polaroid-card-showcase:hover,
+.memory-card:hover{
+
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.18);
+
+    z-index:10;
 }
 
 .section-description {
@@ -427,15 +475,29 @@ body {
     text-align: center;
 }
 
+
+
 .footer{
     margin-top: 40px;
     font-size: 1em;
     font-style: italic;
-    background-color: var(--primary-pink);
+    background-color: var(--pink-background);
     padding: 1rem 2rem; 
     text-align: center;
-  
+    z-index: 10;
 }
+
+.paper-texture {
+    width: 100%;
+    position: absolute;
+    background: url("assets/images/paper-noise.png");
+    background-size: fill;
+    height: 10%;
+    image-rendering: pixelated; /* Ensures the texture looks crisp */
+    pointer-events: none; /* Ensures the texture doesn't interfere with interactions */
+    z-index: -10; /* Places the texture behind all other content */
+}
+
 
 .footer-text {
     margin: 0.5rem 0;
