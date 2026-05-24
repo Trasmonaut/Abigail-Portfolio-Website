@@ -56,7 +56,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Double protection against overflowing rotated elements */
-    cursor: none !important; /* Hides the default mouse cursor */
+  
     scroll-snap-type: none;
     scrollbar-width: thin;
 }
@@ -249,7 +249,7 @@ body {
 
 .gallery-container {
     width: 100%;
-    overflow-x: scroll; /* Prevents horizontal scrolling caused by rotated elements */
+   
 }
 
 .polaroid-card {
